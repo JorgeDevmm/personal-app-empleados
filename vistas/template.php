@@ -28,7 +28,7 @@
       <div class="container">
         <div class="row">
           <div class="col-12">
-            Iniciando proyecto Empleados
+            <?php require_once('./ruteador.php') ?>
           </div>
 
           
