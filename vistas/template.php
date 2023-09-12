@@ -16,7 +16,7 @@
 <body>
   <header>
     <!-- place navbar here -->
-    <nav class="navbar navbar-expand navbar-dark bg-light bg-dark">
+    <nav class="navbar mb-5 py-3 ps-md-5 navbar-expand navbar-dark bg-light bg-dark fs-4">
         <div class="nav navbar-nav">
             <a class="nav-item nav-link active" href="#" aria-current="page">Sistema <span class="visually-hidden">(current)</span></a>
             <a class="nav-item nav-link" href="#">Home</a>

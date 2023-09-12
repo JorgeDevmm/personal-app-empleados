@@ -12,6 +12,9 @@ class ControladorEmpleados{
 
   public function crear(){
     
+      if($_POST){
+            print_r($_POST);
+      }
         require_once './vistas/empleados/crear.php';
 
   }
