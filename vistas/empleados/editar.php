@@ -22,7 +22,9 @@
         <input type="email" class="form-control" name="correo" id="correo" aria-describedby="emailHelpId" placeholder="correo del empleado" value="<?php echo $empleadoBuscado->getCorreo() ;?>">
       </div>
 
-      <input name="" id="" class="btn btn-info" type="submit" value="Editar Empleado">
+      <input name="" id="" class="btn btn-success" type="submit" value="Editar Empleado">
+
+            <a href="?controlador=empleados&accion=inicio" class="btn btn-danger">Cancelar</a>
     </form>
   </div>
 </div>
