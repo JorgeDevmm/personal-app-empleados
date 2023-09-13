@@ -43,7 +43,7 @@ class ControladorEmpleados{
       if($_GET){
       $id = $_GET['id'];      
       $empleado = new Empleado();
-      print_r ($empleado->buscar($id));
+      $empleadoBuscado = $empleado->buscar($id);
 
 
       }

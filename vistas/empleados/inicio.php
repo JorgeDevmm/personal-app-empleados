@@ -24,6 +24,7 @@
 
           
           <div class="btn-group" role="group" aria-label="">
+  
             <a href="?controlador=empleados&accion=editar&id=<?php echo $valor->getId(); ?>" class="btn btn-primary">Editar</a>
             <a href="?controlador=empleados&accion=borrar&id=<?php echo $valor->getId(); ?>" class="btn btn-danger">Eliminar</a>
           </div>
@@ -34,6 +35,7 @@
 
     
   </table>
+
 </div>
 </div>
 

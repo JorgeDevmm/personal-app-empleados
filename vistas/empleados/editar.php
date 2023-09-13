@@ -1,31 +1,28 @@
-<!-- Modal trigger button -->
-<button type="button" class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#modalId">
-  Launch
-</button>
+<div class="card">
+  <div class="card-header bg-dark text-white">
+    Editar Empleado
+  </div>
+  <div class="card-body">
+    <form action="" method="post">
 
-<!-- Modal Body -->
-<!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
-<div class="modal fade" id="modalId" tabindex="-1" data-bs-backdrop="static" data-bs-keyboard="false" role="dialog" aria-labelledby="modalTitleId" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalTitleId">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div class="mb-3">
+        <label for="id" class="form-label">Id</label>
+        <input type="text"
+          class="form-control bg-secondary" name="id" id="id" aria-describedby="helpId" placeholder="Id Empleado" value="<?php echo $empleadoBuscado->getId() ;?>" readonly>
       </div>
-      <div class="modal-body">
-        Body
+
+      <div class="mb-3">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text"
+          class="form-control" name="nombre" id="nombre" aria-describedby="helpId" placeholder="Nombre" value="<?php echo $empleadoBuscado->getNombre() ;?>">
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save</button>
+
+      <div class="mb-3">
+        <label for="correo" class="form-label">Email</label>
+        <input type="email" class="form-control" name="correo" id="correo" aria-describedby="emailHelpId" placeholder="correo del empleado" value="<?php echo $empleadoBuscado->getNombre() ;?>">
       </div>
-    </div>
+
+      <input name="" id="" class="btn btn-info" type="submit" value="Editar Empleado">
+    </form>
   </div>
 </div>
-
-
-<!-- Optional: Place to the bottom of scripts -->
-<script>
-  const myModal = new bootstrap.Modal(document.getElementById('modalId'), options)
-
-</script>
