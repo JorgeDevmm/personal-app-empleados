@@ -5,7 +5,6 @@ require_once("./modelos/empleado.php");
 require_once("./conexion.php");
 
 $conexionBD = new Conexion();
-
 $conexionBD->crearInstancia();
 
 class ControladorEmpleados{
@@ -13,9 +12,10 @@ class ControladorEmpleados{
   // muestra la tabla
   public function inicio(){
 
+      // accede a los datos del modelo
       $empleado = new Empleado();
       // invoco al metodo consultar de la instacia
-      print_r ($empleado->consultar());
+      $empleado =$empleado->consultar();
 
 
         require_once './vistas/empleados/inicio.php';

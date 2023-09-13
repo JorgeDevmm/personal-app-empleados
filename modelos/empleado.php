@@ -16,6 +16,18 @@ class Empleado{
     $this->correo = $correo;
   }
 
+  public function getId(){
+    return $this->id;
+  }
+  public function getNombre(){
+    return $this->nombre;
+  }
+  public function getCorreo(){
+    return $this->correo;
+  }
+
+
+  // consulta información
   public static function consultar(){
     $listaEmpleados=[];
     $conexionBD = new Conexion();
