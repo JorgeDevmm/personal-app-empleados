@@ -13,6 +13,10 @@ class ControladorEmpleados{
   // muestra la tabla
   public function inicio(){
 
+      $empleado = new Empleado();
+      // invoco al metodo consultar de la instacia
+      print_r ($empleado->consultar());
+
 
         require_once './vistas/empleados/inicio.php';
 
