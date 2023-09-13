@@ -15,19 +15,23 @@ class Conexion{
 
   public function crearInstancia(){
 
-    // validamos si existe una conexión
-    if(!isset($this->instancia)){
-      // opciones de errores PDO
-      $opcionesPDO[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
 
-      $this->instancia = new PDO("mysql:host=".$this->host.";dbname=".$this->dbase, $this->usuario, $this->contrasenia, $opcionesPDO);
+            // validamos si existe una conexión
+      if(!isset($this->instancia)){
 
-      echo ("Conexion Realizada");
+        try{
+          // opciones de errores PDO
+          $opcionesPDO[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
 
+          $this->instancia = new PDO("mysql:host=".$this->host.";dbname=".$this->dbase, $this->usuario, $this->contrasenia, $opcionesPDO);
 
-    }
+          return $this->instancia;
+        }catch(PDOException $e){
 
-    return $this->instancia;
+          echo "Error en Conexión" . $e->getMessage();
+        }
+
+      }
   }
 
 

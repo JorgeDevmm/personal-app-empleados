@@ -61,6 +61,22 @@ class Empleado{
     $sql->execute(array($id));
 
   }
+
+  public function buscar($id){
+    $conexionBD = new Conexion(); 
+    $conexionBD = $conexionBD->crearInstancia();
+
+    $sql = $conexionBD->prepare("SELECT * FROM empleados WHERE id = ?");
+    $sql->execute(array($id));
+
+    $empleado = $sql->fetch();
+
+    return new Empleado($empleado['id'], $empleado['nombre'], $empleado['correo']);
+
+    // $sql = $conexionBD->prepare("UPDATE empleados SET nombre = ?,correo = ? WHERE id = ?");
+    // $sql->execute(array($this->nombre,$this->correo,$id));
+
+  }
 }
 
 ?>

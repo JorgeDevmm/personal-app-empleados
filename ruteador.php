@@ -1,8 +1,8 @@
 <?php
 
 // obtencion por url GET
-echo $controlador;//nombre controlador paginas
-echo $accion;//metodo
+//echo $controlador;//nombre controlador paginas
+//echo $accion;//metodo
 
 
 require_once("controladores/controlador_".$controlador.".php");
