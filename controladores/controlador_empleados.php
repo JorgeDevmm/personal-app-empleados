@@ -14,7 +14,7 @@ class ControladorEmpleados{
 
       // accede a los datos del modelo
       $empleado = new Empleado();
-      // invoco al metodo consultar de la instacia
+      // invoco al metodo consultar de la instancia
       $empleado =$empleado->consultar();
 
 
@@ -41,6 +41,12 @@ class ControladorEmpleados{
 
     
         require_once './vistas/empleados/editar.php';
+
+  }
+
+  public function borrar(){
+
+            print_r($_GET);
 
   }
 
