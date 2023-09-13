@@ -31,7 +31,7 @@ class ControladorEmpleados{
       $empleado = new Empleado();
       $empleado->crear($nombre,$correo);
       // redireccionar
-      header("location:./?controlador=empleadoaccion=inicio");
+      header("location:./?controlador=empleados&accion=inicio");
 
       }
         require_once './vistas/empleados/crear.php';
@@ -40,14 +40,23 @@ class ControladorEmpleados{
 
   public function editar(){
 
-      if($_GET){
+      if($_POST){
+      $id = $_POST['id'];      
+      $nombre = $_POST['nombre'];
+      $correo = $_POST['correo'];
+
+
+      $empleado = new Empleado();
+      $empleadoBuscado = $empleado->editar($id,$nombre,$correo);
+
+      // redireccionar
+      header("location:./?controlador=empleados&accion=inicio"); 
+      }
+    
       $id = $_GET['id'];      
       $empleado = new Empleado();
       $empleadoBuscado = $empleado->buscar($id);
 
-
-      }
-    
         require_once './vistas/empleados/editar.php';
 
   }

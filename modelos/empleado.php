@@ -75,7 +75,16 @@ class Empleado{
 
     // $sql = $conexionBD->prepare("UPDATE empleados SET nombre = ?,correo = ? WHERE id = ?");
     // $sql->execute(array($this->nombre,$this->correo,$id));
+  }
 
+  public function editar($id,$nombre,$correo){
+    $conexionBD = new Conexion();
+    $conexionBD = $conexionBD->crearInstancia();
+
+    $sql = $conexionBD->prepare("UPDATE empleados SET nombre = ?,correo = ? WHERE id = ?");
+
+    // pasamos un array como con los parametros
+    $sql->execute(array($nombre, $correo,$id));
   }
 }
 

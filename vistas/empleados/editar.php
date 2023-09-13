@@ -19,7 +19,7 @@
 
       <div class="mb-3">
         <label for="correo" class="form-label">Email</label>
-        <input type="email" class="form-control" name="correo" id="correo" aria-describedby="emailHelpId" placeholder="correo del empleado" value="<?php echo $empleadoBuscado->getNombre() ;?>">
+        <input type="email" class="form-control" name="correo" id="correo" aria-describedby="emailHelpId" placeholder="correo del empleado" value="<?php echo $empleadoBuscado->getCorreo() ;?>">
       </div>
 
       <input name="" id="" class="btn btn-info" type="submit" value="Editar Empleado">
