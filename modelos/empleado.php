@@ -27,7 +27,7 @@ class Empleado{
 
 
   // consulta información
-  public static function consultar(){
+  public function consultar(){
     $listaEmpleados=[];
     $conexionBD = new Conexion();
     $conexionBD = $conexionBD->crearInstancia();
@@ -42,7 +42,7 @@ class Empleado{
     return $listaEmpleados;
   }
 
-  public static function crear($nombre, $correo){
+  public function crear($nombre, $correo){
 
     $conexionBD = new Conexion();
     $conexionBD = $conexionBD->crearInstancia();
@@ -51,7 +51,14 @@ class Empleado{
 
     // pasamos un array como con los parametros
     $sql->execute(array($nombre, $correo));
+  }
 
+  public function borrar($id){
+    $conexionBD = new Conexion();
+    $conexionBD = $conexionBD->crearInstancia();
+
+    $sql = $conexionBD->prepare("DELETE FROM empleados WHERE id = ?");
+    $sql->execute(array($id));
 
   }
 }

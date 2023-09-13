@@ -31,6 +31,8 @@ class ControladorEmpleados{
                   $correo = $_POST['correo'];
                   $empleado = new Empleado();
                   $empleado->crear($nombre,$correo);
+                  // redireccionar
+                  header("location:./?controlador=empleados&accion=inicio");
 
       }
         require_once './vistas/empleados/crear.php';
@@ -45,12 +47,24 @@ class ControladorEmpleados{
   }
 
   public function borrar(){
+      print_r($_GET);
+      // envio datos
+      if($_GET){
+            $id = $_GET['id'];
 
-            print_r($_GET);
+            // accede a los datos del modelo
+            $empleado = new Empleado();
+            // invoco al metodo consultar de la instancia
+            $empleado->borrar($id);
+            // redireccionar
+            header("location:./?controlador=empleados&accion=inicio");
+            }
+
+      }
 
   }
 
-}
+
 
 
 ?>
