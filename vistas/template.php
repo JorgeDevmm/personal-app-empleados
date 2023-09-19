@@ -14,15 +14,30 @@
 </head>
 
 <body>
-  <header>
+  <header >
     <!-- place navbar here -->
-    <nav class="navbar mb-5 py-3 ps-md-5 navbar-expand navbar-dark bg-light bg-dark fs-4">
+  <?php if ($controlador !== "autenticacion") { ?>
+    <nav class="d-flex justify-content-between navbar mb-5 py-3 px-md-5 navbar-expand navbar-dark bg-light bg-dark fs-4">
+
+
         <div class="nav navbar-nav">
             <a class="nav-item nav-link active" href="#" aria-current="page">Sistema <span class="visually-hidden">(current)</span></a>
             <a class="nav-item nav-link" href="?controlador=paginas&accion=inicio">Home</a>
             <a class="nav-item nav-link" href="?controlador=empleados&accion=inicio">Empleados</a>
         </div>
+
+        <div>
+            <a class="text-white text-decoration-none " href="">Salir</a>
+        </div>
+
     </nav>
+
+
+  <?php } else { ?>   
+  <nav class="navbar mb-5 mx-auto py-3 ps-md-5 navbar-expand navbar-dark text-white bg-dark fs-4 d-flex justify-content-center">
+    <h1 >login</h1>
+  </nav>    
+  <?php } ?>  
   </header>
   <main>
       <div class="container">
