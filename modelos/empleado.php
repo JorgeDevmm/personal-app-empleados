@@ -69,18 +69,20 @@ class Empleado{
     return $listaEmpleados;
   }
 
-  public function crear($dni,$nombre, $paterno,$materno){
-
-
+  public function crear($dni,$nombre,$paterno,$materno,$usuario,$correo,$contrasenia){
 
     $conexionBD = new Conexion();
     $conexionBD = $conexionBD->crearInstancia();
     // $clave = $this->getContrasenia();
 
-    $sql = $conexionBD->prepare("INSERT INTO empleados(dni,nombre,apellido_paterno,apellido_materno) VALUES (?,?,?,?)");
 
-    // pasamos un array como con los parametros
-    $sql->execute(array($dni,$nombre, $paterno,$materno));
+    // llamamos al procedimiento almacenado
+    $sql = $conexionBD->prepare("CALL CreacionEmpleadoUsuario(?,?,?,?,?,?,?)");
+
+    // pasamos los parametros para evitar inyección
+    $sql->execute(array($dni,$nombre,$paterno,$materno,$usuario,$correo,$contrasenia));
+
+    $conexionBD = null;
   }
 
   public function borrar($id){
@@ -101,8 +103,10 @@ class Empleado{
 
     $empleado = $sql->fetch();
 
+    // retorna un objeto empleado con los campos de la tabla empleado
     return new Empleado($empleado['id_empleado'],$empleado['dni'], $empleado['nombre'], $empleado['apellido_paterno'] , $empleado['apellido_materno'] );
 
+    
   }
 
   public function editar($id,$dni, $nombre,$aPaterno,$aMaterno){
@@ -116,10 +120,25 @@ class Empleado{
   }
 
 
-  public function ingresarUsuario($correo, $contrasenia){
+    public function buscarUsuario($usuario, $contrasenia){
+    $conexionBD = new Conexion(); 
+    $conexionBD = $conexionBD->crearInstancia();
+
+    $sql = $conexionBD->prepare("SELECT * FROM usuario WHERE usuario = ? AND cotrasenia = ?");
+    $sql->execute(array($usuario, $contrasenia));
+
+    $usuario = $sql->fetch();
 
 
+    print_r($usuario['usuario']);
 
+
+    // if($empleado)
+
+    // // retorna un objeto empleado con los campos de la tabla empleado
+    // return new Empleado($empleado['id_empleado'],$empleado['dni'], $empleado['nombre'], $empleado['apellido_paterno'] , $empleado['apellido_materno'] );
+
+    
   }
 }
 

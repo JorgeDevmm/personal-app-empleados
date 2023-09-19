@@ -24,15 +24,15 @@
       </div>
 
       <div class="mb-3">
-        <label for="nombre" class="form-label">A. Paterno</label>
+        <label for="nombre" class="form-label">Apellido Paterno</label>
         <input type="text"
-          class="form-control" name="aPaterno" id="aPaterno" aria-describedby="helpId" placeholder="A. Paterno" value="<?php echo $empleadoBuscado->getPaterno() ;?>" required>
+          class="form-control" name="aPaterno" id="aPaterno" aria-describedby="helpId" placeholder="A. Paterno" value="<?php echo $empleadoBuscado->getAPaterno() ;?>" required>
       </div>
 
       <div class="mb-3">
-        <label for="nombre" class="form-label">A. Materno</label>
+        <label for="nombre" class="form-label">Apelido Materno</label>
         <input type="text"
-          class="form-control" name="aMaterno" id="aMaterno" aria-describedby="helpId" placeholder="A. Materno" value="<?php echo $empleadoBuscado->getMaterno() ;?>" required>
+          class="form-control" name="aMaterno" id="aMaterno" aria-describedby="helpId" placeholder="A. Materno" value="<?php echo $empleadoBuscado->getAPaterno() ;?>" required>
       </div>
 
 

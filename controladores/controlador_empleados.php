@@ -30,11 +30,12 @@ class ControladorEmpleados{
       $nombre = $_POST['nombre'];
       $paterno = $_POST['aPaterno'];
       $materno = $_POST['aMaterno'];
+      $usuario = $_POST['usuario'];
+      $correo = $_POST['correo'];
       $contrasenia = $_POST['contrasenia'];
-      $materno = $_POST['aMaterno'];
-      // $correo = $_POST['correo'];
+
       $empleado = new Empleado();
-      $empleado->crear($dni,$nombre,$paterno,$materno);
+      $empleado->crear($dni,$nombre,$paterno,$materno,$usuario,$correo,$contrasenia);
       // redireccionar
       header("location:./?controlador=empleados&accion=inicio");
 
@@ -45,12 +46,14 @@ class ControladorEmpleados{
 
   public function editar(){
 
+
       if($_POST){
       $id = $_POST['id'];      
       $dni = $_POST['dni'];      
       $nombre = $_POST['nombre'];
       $aPaterno = $_POST['aPaterno'];
       $aMaterno = $_POST['aMaterno'];
+
 
 
       $empleado = new Empleado();
