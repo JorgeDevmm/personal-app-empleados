@@ -1,8 +1,8 @@
 <?php
 
 // valores por default
-$controlador = "paginas";
-$accion = "inicio";
+$controlador = "autenticacion";
+$accion = "ingresar";
 
 
 

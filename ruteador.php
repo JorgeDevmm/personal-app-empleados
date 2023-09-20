@@ -16,6 +16,4 @@ $controlador = new $objControlador();
 $controlador->$accion();
 
 
-
-
 ?>

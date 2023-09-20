@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <title>Title</title>
@@ -17,7 +17,18 @@
 <body>
   <header >
     <!-- place navbar here -->
-  <?php if ($controlador !== "autenticacion") { ?>
+  <?php     
+    
+    //solo si es diferente al controlador de la pagina de ingreso 
+    if ($controlador !== "autenticacion") {
+    // valida session como el template se repetira en varias paginas
+    session_start();
+
+    if($_SESSION["acceso"] !== "1"){
+            header("location:./?controlador=autenticacion&accion=ingresar");
+            exit;
+
+    }      ?>
     <nav class="d-flex justify-content-between navbar mb-5 py-3 px-md-5 navbar-expand navbar-dark bg-light bg-dark fs-4">
 
 
@@ -28,21 +39,25 @@
         </div>
 
         <div>
-            <a class="text-white text-decoration-none " href="">Salir</a>
+
+            <a href="scripts/cerrar_sesion.php" class="text-decoration-none text-white" >Salir</a>
         </div>
 
     </nav>
 
 
-  <?php } else { ?>   
+  <?php } else {  ?>   
   <nav class="navbar mb-5 mx-auto py-5 navbar-expand navbar-dark text-white bg-dark fs-4 d-flex justify-content-center">
   </nav>    
   <?php } ?>  
   </header>
   <main class="main">
+    
       <div class="container">
+        <div class='mensaje bg-danger text-center text-white' ></div>
         <div class="row">
           <div class="col-12">
+
             <?php require_once('./ruteador.php') ?>
           </div>
 
@@ -61,6 +76,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
+
+  <script src="../assets/js/app.js"></script>
 </body>
 
 </html>
+
+

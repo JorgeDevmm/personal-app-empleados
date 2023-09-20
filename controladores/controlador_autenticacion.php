@@ -23,16 +23,25 @@ class ControladorAutenticacion{
         if($usuarioEncontrado){
           
             if( $usuarioEncontrado->getUsuario() == $usuario && $usuarioEncontrado->getContrasenia() == $contrasenia){
-          
-                print_r('usuario existente');
 
+              // Iniciar session
+                session_start();
+
+              // establecer una valor a la session global
+                $_SESSION["acceso"] = "1";
+
+                print("<p>Acceso aprobado</p>");
                 header("location:./?controlador=paginas&accion=inicio");
+                
                     
+            }else{
+              print("<div class='bg-danger text-center text-white' >Acceso no autorizado no</div>");
             }
           
         }else{
-            
-            header("location:./?controlador=autenticacion&accion=ingresar");
+
+        print("Usuario no Existe");
+
 
         }
       }

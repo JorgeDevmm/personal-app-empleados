@@ -1,3 +1,4 @@
+
 <div class="card">
   <div class="card-header">
         <a name="" id="" class="btn btn-success my-2" href="?controlador=empleados&accion=crear" role="button">Agregar Empleado</a>
@@ -20,7 +21,7 @@
     <?php foreach ($empleado as $valor) { ?>
           <tr>
             <td scope="row"><?php echo $valor->getId(); ?></td>
-            <td><?php echo $valor->getNombre(); ?></td>
+            <td><?php echo $valor->getDni(); ?></td>
             <td><?php echo $valor->getNombre(); ?></td>
             <td><?php echo $valor->getAPaterno(); ?></td>
             <td><?php echo $valor->getAMaterno(); ?></td>
