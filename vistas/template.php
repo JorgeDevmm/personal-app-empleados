@@ -11,6 +11,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+  <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 
 <body>
@@ -34,12 +35,11 @@
 
 
   <?php } else { ?>   
-  <nav class="navbar mb-5 mx-auto py-3 ps-md-5 navbar-expand navbar-dark text-white bg-dark fs-4 d-flex justify-content-center">
-    <h1 >login</h1>
+  <nav class="navbar mb-5 mx-auto py-5 navbar-expand navbar-dark text-white bg-dark fs-4 d-flex justify-content-center">
   </nav>    
   <?php } ?>  
   </header>
-  <main>
+  <main class="main">
       <div class="container">
         <div class="row">
           <div class="col-12">
