@@ -1,21 +1,21 @@
-<div class="container-xl col-md-8 mt-5 p-md-5 border border-2 rounded-2">
+<div class="container-md mt-5">
   <div class="row justify-content-center align-items-center">
-    <div class="col-md-6">
+    <!-- <div class="col-md-4">
       <img class="img-fluid" src="././assets/img/login.jpg" alt="login">
-    </div>
-    <div class="col-md-6 ">
+    </div> -->
+    <div class="container-sm  col-md-6 ">
         <form method="post">
-          <h2 class="fw-bold fs-4">¡Te damos la bienvenida!</h2>
+          <h2 class="fw-bold text-center fs-1 ">Iniciar Sesión</h2>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Ingresar el Usuario</label>
+            <label for="usuario" class="form-label">Ingresar el Usuario</label>
             <input type="text" name="usuario" id="usuario" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Ingresar el Usuario">
           </div>
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Ingresar la contraseña</label>
+            <label for="contrasenia" class="form-label">Ingresar la contraseña</label>
             <input type="password" name="contrasenia" id="contrasenia" class="form-control" id="exampleInputPassword1" placeholder="Ingresar la contraseña">
           </div>
 
-          <button type="submit" class="btn btn-success my-3 mb-md-0 w-100">Ingresar</button>
+          <button type="submit" class="btn btn-success my-3 px-4 py-3 border-0 rounded-5 mb-md-0 ">Iniciar sesión</button>
       </form>
     </div>
   </div>

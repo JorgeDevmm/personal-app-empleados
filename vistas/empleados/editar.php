@@ -12,7 +12,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="id" class="form-label">DNI</label>
+        <label for="dni" class="form-label">DNI</label>
         <input type="text"
           class="form-control" name="dni" id="dni" aria-describedby="helpId" placeholder="DNI Empleado" value="<?php echo $empleadoBuscado->getDni() ;?>" required>
       </div>
@@ -24,22 +24,22 @@
       </div>
 
       <div class="mb-3">
-        <label for="nombre" class="form-label">Apellido Paterno</label>
+        <label for="aPaterno" class="form-label">Apellido Paterno</label>
         <input type="text"
           class="form-control" name="aPaterno" id="aPaterno" aria-describedby="helpId" placeholder="A. Paterno" value="<?php echo $empleadoBuscado->getAPaterno() ;?>" required>
       </div>
 
       <div class="mb-3">
-        <label for="nombre" class="form-label">Apelido Materno</label>
+        <label for="aMaterno" class="form-label">Apelido Materno</label>
         <input type="text"
           class="form-control" name="aMaterno" id="aMaterno" aria-describedby="helpId" placeholder="A. Materno" value="<?php echo $empleadoBuscado->getAPaterno() ;?>" required>
       </div>
 
 
 
-      <input name="" id="" class="btn btn-success" type="submit" value="Editar Empleado">
+      <input name="" id="" class="btn btn-success  px-3 py-2 border-0 rounded-5 mb-md-0" type="submit" value="Editar Empleado">
 
-      <a href="?controlador=empleados&accion=inicio" class="btn btn-danger">Cancelar</a>
+      <a href="?controlador=empleados&accion=inicio" class="btn btn-danger  px-3 py-2 border-0 rounded-5 mb-md-0">Cancelar</a>
     </form>
   </div>
 </div>

@@ -69,6 +69,26 @@ class Empleado{
     return $listaEmpleados;
   }
 
+  
+  // public function buscarDni($dni){
+  //   $listaEmpleados=[];
+  //   $conexionBD = new Conexion(); 
+  //   $conexionBD = $conexionBD->crearInstancia();
+
+  //   $sql = $conexionBD->prepare("SELECT * FROM empleados WHERE dni = ?");
+  //   $sql->execute(array($dni));
+
+  //   // Obtener todos los registros y lo recibo como uno con fetchAll()
+  //   foreach($sql->fetchAll() as $empleado) {
+  //     // guardo mi objeto de tipo empleado
+  //     $listaEmpleados[] = new Empleado($empleado['id_empleado'], $empleado['dni'], $empleado['nombre'], $empleado['apellido_paterno'], $empleado['apellido_materno']);
+  //   }
+  //   return $listaEmpleados;
+
+    
+  // }
+
+
   public function crear($dni,$nombre,$paterno,$materno,$usuario,$correo,$contrasenia){
 
     $conexionBD = new Conexion();
@@ -108,6 +128,7 @@ class Empleado{
 
     
   }
+
 
   public function editar($id,$dni, $nombre,$aPaterno,$aMaterno){
     $conexionBD = new Conexion();

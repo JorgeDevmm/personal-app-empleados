@@ -21,6 +21,17 @@ class ControladorEmpleados{
         require_once './vistas/empleados/inicio.php';
 
   }
+  // public function busqueda(){
+
+  //     if($_POST['dni']){
+  //     $dni = $_POST['dni'];      
+  //     $empleado = new Empleado();
+  //     $empleadoBuscado = $empleado->buscarDni($dni);
+
+  //       require_once './vistas/empleados/inicio.php';
+  //     }
+
+  // }
 
   public function crear(){
     

@@ -1,0 +1,22 @@
+:root {
+  --colorSecundario: #6801c4;
+  --colorSecundario: #6801c4;
+  --fontPrincipal: 'Raleway', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  font-family: var(--fontPrincipal);
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.btn-success {
+  background-color: var(--colorSecundario) !important;
+}
+
+.enlaces {
+  font-size: 1rem;
+}

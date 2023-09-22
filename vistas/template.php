@@ -7,14 +7,21 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&display=swap" rel="stylesheet">
+
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <link rel="stylesheet" href="./assets/css/styles.css">
 </head>
 
-<body>
+<body class="d-flex flex-column">
   <header >
     <!-- place navbar here -->
   <?php     
@@ -29,25 +36,26 @@
             exit;
 
     }      ?>
-    <nav class="d-flex justify-content-between navbar mb-5 py-3 px-md-5 navbar-expand navbar-dark bg-light bg-dark fs-4">
+    <nav class="d-flex justify-content-between navbar mb-5 py-3 px-3 px-md-5 navbar-expand navbar-dark bg-light bg-black fs-5">
 
 
         <div class="nav navbar-nav">
-            <a class="nav-item nav-link active" href="#" aria-current="page">Sistema <span class="visually-hidden">(current)</span></a>
-            <a class="nav-item nav-link" href="?controlador=paginas&accion=inicio">Home</a>
-            <a class="nav-item nav-link" href="?controlador=empleados&accion=inicio">Empleados</a>
+            <a class="enlaces nav-item nav-link active" href="?controlador=paginas&accion=inicio" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+            <a class="enlaces nav-item nav-link" href="?controlador=empleados&accion=inicio">Empleados</a>
+            <a class="enlaces nav-item nav-link" href="?controlador=usuario&accion=inicio">Usuarios</a>
+            <a class="enlaces nav-item nav-link" href="?controlador=perfiles&accion=inicio">Perfiles</a>
         </div>
 
         <div>
 
-            <a href="scripts/cerrar_sesion.php" class="text-decoration-none text-white" >Salir</a>
+            <a href="scripts/cerrar_sesion.php" class="enlaces text-decoration-none text-white" >Cerrar sesión</a>
         </div>
 
     </nav>
 
 
   <?php } else {  ?>   
-  <nav class="navbar mb-5 mx-auto py-5 navbar-expand navbar-dark text-white bg-dark fs-4 d-flex justify-content-center">
+  <nav class="navbar mb-5 mx-auto py-5 navbar-expand navbar-dark text-white bg-black fs-4 d-flex justify-content-center">
   </nav>    
   <?php } ?>  
   </header>
@@ -65,8 +73,8 @@
         </div>
       </div>
   </main>
-  <footer>
-    <!-- place footer here -->
+  <footer class="footer bg-black mt-5 py-5">
+    <p class="text-white text-center" >©Todos los Derechos Reservados - Jorge Luis Monzón Morales</p>
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
