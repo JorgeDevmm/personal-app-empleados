@@ -89,7 +89,7 @@ class Empleado{
   // }
 
 
-  public function crear($dni,$nombre,$paterno,$materno,$usuario,$correo,$contrasenia){
+  public function crear($dni,$nombre,$paterno,$materno){
 
     $conexionBD = new Conexion();
     $conexionBD = $conexionBD->crearInstancia();
@@ -97,10 +97,11 @@ class Empleado{
 
 
     // llamamos al procedimiento almacenado
-    $sql = $conexionBD->prepare("CALL CreacionEmpleadoUsuario(?,?,?,?,?,?,?)");
+    // $sql = $conexionBD->prepare("CALL CreacionEmpleadoUsuario(?,?,?,?,?)");
+    $sql = $conexionBD->prepare("INSERT INTO empleados (dni,nombre,apellido_paterno,apellido_materno) VALUES (?,?,?,?) ");
 
     // pasamos los parametros para evitar inyección
-    $sql->execute(array($dni,$nombre,$paterno,$materno,$usuario,$correo,$contrasenia));
+    $sql->execute(array($dni,$nombre,$paterno,$materno));
 
     $conexionBD = null;
   }

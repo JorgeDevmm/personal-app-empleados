@@ -20,27 +20,30 @@ class ControladorUsuario{
 
   }
 
-  // public function crear(){
+  public function crear(){
     
-  //     // envio datos
-  //     if($_POST){
-  //     $dni = $_POST['dni'];
-  //     $nombre = $_POST['nombre'];
-  //     $paterno = $_POST['aPaterno'];
-  //     $materno = $_POST['aMaterno'];
-  //     $usuario = $_POST['usuario'];
-  //     $correo = $_POST['correo'];
-  //     $contrasenia = $_POST['contrasenia'];
+      // envio datos
+      if($_POST){
+      $dni = $_POST['dni'];
+      $nombreUsuario = $_POST['usuario'];
+      $correo = $_POST['correo'];
+      $contrasenia = $_POST['contrasenia'];
 
-  //     $empleado = new Empleado();
-  //     $empleado->crear($dni,$nombre,$paterno,$materno,$usuario,$correo,$contrasenia);
-  //     // redireccionar
-  //     header("location:./?controlador=empleados&accion=inicio");
 
-  //     }
-  //       require_once './vistas/empleados/crear.php';
+      $usuario = new Usuario();
+      $usuario->crear($dni,$nombreUsuario,$correo,$contrasenia);
 
-  // }
+
+      print_r($usuario->getId());
+      print_r($usuario->getUsuario());
+      print_r($usuario->getCorreo());
+      // redireccionar
+      // header("location:./?controlador=usuario&accion=inicio");
+
+      }
+        require_once './vistas/usuario/crear.php';
+
+  }
 
   public function editar(){
 

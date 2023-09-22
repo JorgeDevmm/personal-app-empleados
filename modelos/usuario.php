@@ -64,6 +64,35 @@ class Usuario{
     
   // }
 
+  public function crear($dni,$nombreUsuario,$correo,$contrasenia){
+
+    $conexionBD = new Conexion();
+    $conexionBD = $conexionBD->crearInstancia();
+
+
+
+    $sql_id_empleado	= $conexionBD->prepare("SELECT e.id_empleado 
+                                          FROM empleados.empleados e
+	                                        LEFT JOIN empleados.usuario u
+	                                        ON e.id_empleado = u.id_empleado
+	                                        WHERE e.dni = ?");
+
+    $sql_id_empleado->execute(array($dni));
+    // Obtener el valor del id_empleado
+    $id_empleado = $sql_id_empleado->fetchColumn();
+
+
+    // llamamos al procedimiento almacenado
+    $sql = $conexionBD->prepare("CALL CreacionUsuario(?,?,?,?)");
+
+    // pasamos los parametros para evitar inyección
+    $sql->execute(array($id_empleado,$nombreUsuario,$correo,$contrasenia));
+
+    $conexionBD = null;
+  }
+
+
+
   public function buscar($id){
     $conexionBD = new Conexion(); 
     $conexionBD = $conexionBD->crearInstancia();
@@ -89,7 +118,7 @@ class Usuario{
     $sql->execute(array($dni,$nombre, $aPaterno,$aMaterno, $id));
   }
 
-
+  
 
 
 

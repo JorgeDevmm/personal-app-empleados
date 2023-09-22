@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-header bg-dark text-white">
-    Editar Empleado
+    Editar Usuario
   </div>
   <div class="card-body">
     <form action="" method="post">
@@ -24,7 +24,7 @@
       </div>
 
       <div class="mb-3">
-        <label for="contrasenia" class="form-label">Contrasenia</label>
+        <label for="contrasenia" class="form-label">Contraseña</label>
         <input type="text"
           class="form-control" name="contrasenia" id="contrasenia" aria-describedby="helpId" placeholder="Contraseña" value="<?php echo $usuarioBuscado->getContrasenia() ;?>" required>
       </div>

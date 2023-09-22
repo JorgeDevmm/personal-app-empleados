@@ -24,21 +24,6 @@
         <input type="text"
           class="form-control" name="aMaterno" id="aMaterno" aria-describedby="helpId" placeholder="Apellido Materno" required>
       </div>
-      <div class="mb-3">
-        <label for="usuario" class="form-label">Usuario</label>
-        <input type="text"
-          class="form-control" name="usuario" id="usuario" aria-describedby="helpId" placeholder="Ingresar Usuario" required>
-      </div>
-      <div class="mb-3">
-        <label for="correo" class="form-label">Correo</label>
-        <input type="email"
-          class="form-control" name="correo" id="correo" aria-describedby="helpId" placeholder="Ingresar Correo" required>
-      </div>
-      <div class="mb-3">
-        <label for="contrasenia" class="form-label">Contraseña</label>
-        <input type="password"
-          class="form-control" name="contrasenia" id="contrasenia" aria-describedby="helpId" placeholder="Ingresar Contraseña" required>
-      </div>
 
 
 
