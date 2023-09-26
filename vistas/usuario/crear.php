@@ -3,6 +3,16 @@
     Agregar Usuario
   </div>
   <div class="card-body">
+
+    <?php
+    if((!empty($mensaje) && $mensaje) == "id_empleado no encontrado"){
+
+      
+      print "<script> alert('empleado no encontrado')</script>";
+    }  
+
+    ?>
+
     <form action="" method="post">
       <div class="mb-3">
         <label for="dni" class="form-label">Dni</label>
@@ -23,6 +33,11 @@
         <label for="contrasenia" class="form-label">Contraseña</label>
         <input type="password"
           class="form-control" name="contrasenia" id="contrasenia" aria-describedby="helpId" placeholder="Contraseña" required>
+      </div>
+      <div class="mb-3">
+        <label for="perfil" class="form-label">Perfil</label>
+        <input type="text"
+          class="form-control" name="perfil" id="perfil" aria-describedby="helpId" placeholder="perfil" required>
       </div>
 
 

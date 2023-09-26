@@ -10,8 +10,8 @@
 
   </div>
   <div class="card-body">
-    <div class="table-responsive">
-      <table class="table table-secondary">
+    <div class="table-responsive container-xl">
+      <table id="tabla_id" class="table table-secondary">
         <thead >
           <tr >
             <th class="bg-dark text-white" scope="col">ID</th>

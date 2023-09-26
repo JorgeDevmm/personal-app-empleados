@@ -21,6 +21,8 @@ class ControladorUsuario{
   }
 
   public function crear(){
+
+    $mensaje = "";
     
       // envio datos
       if($_POST){
@@ -28,17 +30,24 @@ class ControladorUsuario{
       $nombreUsuario = $_POST['usuario'];
       $correo = $_POST['correo'];
       $contrasenia = $_POST['contrasenia'];
+      $id_perfil = $_POST['perfil'];
+
+      
+      $usuario = new Usuario();  
+
+      try{
+
+        $usuario->crear($dni,$nombreUsuario,$correo,$contrasenia,$id_perfil);
+
+        //redireccionar
+        header("location:./?controlador=usuario&accion=inicio");
+
+      }catch(Exception $e){
+
+          $mensaje = "id_empleado no encontrado";
+      }
 
 
-      $usuario = new Usuario();
-      $usuario->crear($dni,$nombreUsuario,$correo,$contrasenia);
-
-
-      print_r($usuario->getId());
-      print_r($usuario->getUsuario());
-      print_r($usuario->getCorreo());
-      // redireccionar
-      // header("location:./?controlador=usuario&accion=inicio");
 
       }
         require_once './vistas/usuario/crear.php';

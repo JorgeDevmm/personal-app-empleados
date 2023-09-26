@@ -64,29 +64,33 @@ class Usuario{
     
   // }
 
-  public function crear($dni,$nombreUsuario,$correo,$contrasenia){
+  public function crear($dni,$nombreUsuario,$correo,$contrasenia,$id_perfil){
 
     $conexionBD = new Conexion();
     $conexionBD = $conexionBD->crearInstancia();
 
 
+      $sql_id_empleado	= $conexionBD->prepare("SELECT e.id_empleado 
+                                            FROM empleados.empleados e
+                                            LEFT JOIN empleados.usuario u
+                                            ON e.id_empleado = u.id_empleado
+                                            WHERE e.dni = ?");
 
-    $sql_id_empleado	= $conexionBD->prepare("SELECT e.id_empleado 
-                                          FROM empleados.empleados e
-	                                        LEFT JOIN empleados.usuario u
-	                                        ON e.id_empleado = u.id_empleado
-	                                        WHERE e.dni = ?");
+      $sql_id_empleado->execute(array($dni));
+      // Obtener el valor del id_empleado
+      $id_empleado = $sql_id_empleado->fetchColumn();
 
-    $sql_id_empleado->execute(array($dni));
-    // Obtener el valor del id_empleado
-    $id_empleado = $sql_id_empleado->fetchColumn();
+      // validar si id_empleado existe
+      if(isset($id_empleado)){
+      // llamamos al procedimiento almacenado
+      // $sql = $conexionBD->prepare("CALL CreacionUsuario(?,?,?,?,?)");
+      $sql = $conexionBD->prepare("INSERT INTO usuario (id_empleado,id_perfil,usuario,correo,contrasenia) VALUES (?,?,?,?,?)"); 
 
 
-    // llamamos al procedimiento almacenado
-    $sql = $conexionBD->prepare("CALL CreacionUsuario(?,?,?,?)");
+      // pasamos los parametros para evitar inyección
+      $sql->execute(array($id_empleado,$id_perfil,$nombreUsuario,$correo,$contrasenia));
 
-    // pasamos los parametros para evitar inyección
-    $sql->execute(array($id_empleado,$nombreUsuario,$correo,$contrasenia));
+      }
 
     $conexionBD = null;
   }

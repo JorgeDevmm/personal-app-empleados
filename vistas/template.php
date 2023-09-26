@@ -19,6 +19,21 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
   <link rel="stylesheet" href="./assets/css/styles.css">
+  
+
+      <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+  <!-- datatable cdn -->
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />  
+
+  <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+  <!-- datatables para bs5 -->
+  <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
+
+
+
 </head>
 
 <body class="d-flex flex-column">
@@ -85,7 +100,9 @@
     integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
   </script>
 
-  <script src="../assets/js/app.js"></script>
+  <script src="./assets/js/app.js"></script>
+  
+
 </body>
 
 </html>
