@@ -81,21 +81,21 @@ class ControladorUsuario{
 
   }
 
-  // public function borrar(){
-  //     print_r($_GET);
-  //     // envio datos
-  //     if($_GET){
-  //           $id = $_GET['id'];
+  public function borrar(){
+      print_r($_GET);
+      // envio datos
+      if($_GET){
+            $id = $_GET['id'];
 
-  //           // accede a los datos del modelo
-  //           $empleado = new Empleado();
-  //           // invoco al metodo consultar de la instancia
-  //           $empleado->borrar($id);
-  //           // redireccionar
-  //           header("location:./?controlador=empleados&accion=inicio");
-  //           }
+            // accede a los datos del modelo
+            $usuario = new Usuario();
+            // invoco al metodo consultar de la instancia
+            $usuario->borrar($id);
+            // redireccionar
+            header("location:./?controlador=usuario&accion=inicio");
+            }
 
-  //     }
+      }
 
   }
 

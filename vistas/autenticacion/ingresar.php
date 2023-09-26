@@ -4,6 +4,7 @@
       <img class="img-fluid" src="././assets/img/login.jpg" alt="login">
     </div> -->
     <div class="container-sm  col-md-6 ">
+        <p class="inicio"></p>
         <form method="post">
           <h2 class="fw-bold text-center fs-1 ">Iniciar Sesión</h2>
           <div class="mb-3">

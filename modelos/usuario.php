@@ -49,20 +49,7 @@ class Usuario{
     return $listaUsuarios;
   }
 
-  // public function buscar($dni){
-  //   $conexionBD = new Conexion(); 
-  //   $conexionBD = $conexionBD->crearInstancia();
 
-  //   $sql = $conexionBD->prepare("SELECT * FROM usuario u INNER JOIN empleados e ON u.id_empleado = e.id_empleado  WHERE e.dni = ?");
-  //   $sql->execute(array($dni));
-
-  //   $usuario = $sql->fetch();
-
-  //   // retorna un objeto empleado con los campos de la tabla empleado
-  //   return new Usuario($usuario['id_empleado'],$usuario['dni'], $usuario['correo'], $usuario['contrasenia']);
-
-    
-  // }
 
   public function crear($dni,$nombreUsuario,$correo,$contrasenia,$id_perfil){
 
@@ -147,6 +134,17 @@ class Usuario{
     }
     
   }
+
+
+    public function borrar($id){
+    $conexionBD = new Conexion();
+    $conexionBD = $conexionBD->crearInstancia();
+
+    $sql = $conexionBD->prepare("DELETE FROM usuario WHERE id_usuario = ?");
+    $sql->execute(array($id));
+
+  }
+
 
 }
 

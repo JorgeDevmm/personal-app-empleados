@@ -37,21 +37,6 @@ class Empleado{
     return $this->aMaterno;
   }
 
-  // public function setContrasenia(){
-    
-  //   $longitud_clave = 8;
-  //   $caracteres_permitidos = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  //   $claveGenerada = substr(str_shuffle($caracteres_permitidos), 0, $longitud_clave);
-
-  //   $this->contrasenia = $claveGenerada;
-
-  //   return $this->contrasenia;
-  // }
-
-  // public function getContrasenia(){
-  //   return $this->setContrasenia();
-  // }
-
 
   // consulta información
   public function consultar(){
@@ -65,28 +50,12 @@ class Empleado{
     foreach($sql->fetchAll() as $empleado) {
       // guardo mi objeto de tipo empleado
       $listaEmpleados[] = new Empleado($empleado['id_empleado'], $empleado['dni'], $empleado['nombre'], $empleado['apellido_paterno'], $empleado['apellido_materno']);
+
+
     }
     return $listaEmpleados;
   }
 
-  
-  // public function buscarDni($dni){
-  //   $listaEmpleados=[];
-  //   $conexionBD = new Conexion(); 
-  //   $conexionBD = $conexionBD->crearInstancia();
-
-  //   $sql = $conexionBD->prepare("SELECT * FROM empleados WHERE dni = ?");
-  //   $sql->execute(array($dni));
-
-  //   // Obtener todos los registros y lo recibo como uno con fetchAll()
-  //   foreach($sql->fetchAll() as $empleado) {
-  //     // guardo mi objeto de tipo empleado
-  //     $listaEmpleados[] = new Empleado($empleado['id_empleado'], $empleado['dni'], $empleado['nombre'], $empleado['apellido_paterno'], $empleado['apellido_materno']);
-  //   }
-  //   return $listaEmpleados;
-
-    
-  // }
 
 
   public function crear($dni,$nombre,$paterno,$materno){
